@@ -308,6 +308,15 @@ namespace BriefingRoom4DCSWorld.Template
         public string PlayerSPAircraft { get { return PlayerSPAircraft_; } set { PlayerSPAircraft_ = TemplateTools.CheckValuePlayerAircraft(value); } }
         private string PlayerSPAircraft_;
 
+
+        /// <summary>
+        /// Which coalition does the player belong to?
+        /// </summary>
+        [Category("Player, single player only"), DisplayName("Player Country")]
+        [Description("Which Country does the player belong to?")]
+        [TypeConverter(typeof(EnumTypeConverter<Country>))]
+        public Country PlayerCountry { get; set; }
+
         /// <summary>
         /// Number of AI wingmen in the player's flight group.
         /// As with all values in the "Player, single player only" category, this value is ignored if any
@@ -437,6 +446,7 @@ namespace BriefingRoom4DCSWorld.Template
             OptionsUnitMods = new string[0];
 
             PlayerAISkillLevel = BRSkillLevel.Random;
+            PlayerCountry = Country.USA;
             PlayerEscortCAP = 0;
             PlayerEscortSEAD = 0;
             PlayerFriendlyAirDefense = AmountN.Random;
@@ -471,6 +481,7 @@ namespace BriefingRoom4DCSWorld.Template
 
                 ContextCoalitionBlue = ini.GetValue("Context", "Coalition.Blue", ContextCoalitionBlue);
                 ContextCoalitionPlayer = ini.GetValue("Context", "Coalition.Player", ContextCoalitionPlayer);
+                PlayerCountry = ini.GetValue("Context", "Country.Player", PlayerCountry);
                 ContextCoalitionRed = ini.GetValue("Context", "Coalition.Red", ContextCoalitionRed);
                 ContextDecade = ini.GetValue("Context", "Decade", ContextDecade);
 
@@ -535,6 +546,7 @@ namespace BriefingRoom4DCSWorld.Template
 
                 ini.SetValue("Context", "Coalition.Blue", ContextCoalitionBlue);
                 ini.SetValue("Context", "Coalition.Player", ContextCoalitionPlayer);
+                ini.SetValue("Context", "Country.Player", PlayerCountry);
                 ini.SetValue("Context", "Coalition.Red", ContextCoalitionRed);
                 ini.SetValue("Context", "Decade", ContextDecade);
 
