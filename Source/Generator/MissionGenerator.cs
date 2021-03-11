@@ -273,8 +273,8 @@ namespace BriefingRoom4DCSWorld.Generator
             mission.Coalitions[(int)Coalition.Red] = template.GetCoalition(Coalition.Red);
             mission.CivilianTraffic = template.OptionsCivilianTraffic;
             mission.CoalitionPlayer = template.ContextCoalitionPlayer;
-            mission.CountryBlues =new List<Country>{Country.CJTF_BLUE};
-            mission.CountryReds = new List<Country>{Country.CJTF_RED};
+            mission.CountryBlues =new List<Country>{Country.CJTFBlue};
+            mission.CountryReds = new List<Country>{Country.CJTFRed};
             if (template.GetMissionType() == MissionType.SinglePlayer){
                 if (template.ContextCoalitionPlayer == Coalition.Blue)
                     mission.CountryBlues.Add(template.PlayerCountry);

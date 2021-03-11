@@ -446,7 +446,7 @@ namespace BriefingRoom4DCSWorld.Template
             OptionsUnitMods = new string[0];
 
             PlayerAISkillLevel = BRSkillLevel.Random;
-            PlayerCountry = Country.USA;
+            PlayerCountry = Country.CJTFBlue;
             PlayerEscortCAP = 0;
             PlayerEscortSEAD = 0;
             PlayerFriendlyAirDefense = AmountN.Random;

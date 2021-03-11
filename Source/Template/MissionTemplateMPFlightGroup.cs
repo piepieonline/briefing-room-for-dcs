@@ -46,7 +46,7 @@ namespace BriefingRoom4DCSWorld.Template
         /// </summary>
         [DisplayName("Country"), Description("Country of group.")]
         [TypeConverter(typeof(EnumTypeConverter<Country>))]
-        public Country Country { get; set; } = Country.CJTF_BLUE;
+        public Country Country { get; set; } = Country.CJTFBlue;
 
         /// <summary>
         /// Should this aircraft group be spawned on the carrier? A compatible carrier must be selected in the mission template settings.
